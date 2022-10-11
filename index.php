@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
+    <div id="backgroundWrapper"></div>
     <div id="navWrapper">
         <nav>
             <li> <a href="#">home</a> </li>
@@ -16,7 +17,7 @@
             <li> <a href="#">login/register</a> </li>
 
             <div id="logoWrapper">
-                <img src="logo.png" alt="logo" id="logo">
+                <img src="./img/logo.png" alt="logo" id="logo">
             </div>
 
         </nav>

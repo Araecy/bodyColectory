@@ -1,20 +1,30 @@
 body {
     padding: 0;
     margin: 0;
+    // z-index: 100;
+    div[id="backgroundWrapper"] {
+        z-index: -999;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        position: absolute;
+        // background: rgb(0, 0, 0) url("../img/logo-blue.png") repeat fixed center;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) , url("../img/logo-blue.png") repeat fixed center;
+        // background-size: cover;
+        filter: brightness(90%);
+    }
 }
-
-
-
-
 div[id="navWrapper"] {
     width: 100vw;
     height: 5vh;
+    min-height: 60px;
     background: rgb(0,134,161);
     background: linear-gradient(90deg, rgba(0,134,161,1) 0%, rgba(0,212,255,1) 100%);
     nav {
         padding: 0 0 0 10px;
         list-style-type: none;
         height: inherit;
+        min-height: inherit;
         display: flex;
         align-content: center;
         justify-content: flex-start;
@@ -23,9 +33,12 @@ div[id="navWrapper"] {
             margin-left: auto;
         }
         div[id="logoWrapper"] {
+            height: inherit;
+            min-height: inherit;
             margin: 0 0 0 10px;
             img[id="logo"] {
-                max-height: 5vh;
+                min-height: inherit;
+                height: 5vh;
             }
         }
         li {
@@ -46,7 +59,8 @@ div[id="navWrapper"] {
                 display: inline-block;
                 padding: 5px 0;
                 position: relative;
-                -webkit-background-clip: text;
+                background-clip: text;
+                // -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 transition: all 0.3s ease-in-out;
             }
