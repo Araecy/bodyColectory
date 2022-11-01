@@ -54,9 +54,9 @@
     echo
         "<div id='content'>",
             "<h1>Succesfully uploaded!</h1>",
-            "<a href='./'>Continue</a>",
+            "<a href='./". $_SESSION['previousPage']. "'>Continue</a>",
         "</div>"
     ;
-    // Redirect automatically to index.php after 2 seconds
-    header("Refresh: 2; url = ./");
+    // Redirect automatically to the previous page after 2 seconds
+    header("Refresh: 2; url = ./". $_SESSION['previousPage']);
 ?>

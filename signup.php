@@ -1,3 +1,8 @@
+<!-- Start a php session (this must be before <!DOCTYPE html>!!!) -->
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -49,22 +54,22 @@
             echo
                 "<div id='content'>",
                     "<h1>Account successfully created!</h1>",
-                    "<a href='./'>Continue</a>",
+                    "<a href='./". $_SESSION['previousPage']. "'>Continue</a>",
                 "</div>"
             ;
-            // Redirect automatically to index.php after 2 seconds
-            header("Refresh: 2; url = ./");
+            // Redirect automatically to the previous page after 2 seconds
+            header("Refresh: 2; url = ./". $_SESSION['previousPage']);
         }
         // If username already exists show error
         else{
             echo
                 "<div id='content'>",
                     "<h1>That username has already been taken!</h1>",
-                    "<a href='./'>Continue</a>",
+                    "<a href='./". $_SESSION['previousPage']. "'>Continue</a>",
                 "</div>"
             ;
-            // Redirect automatically to index.php after 2 seconds
-            header("Refresh: 2; url = ./");
+            // Redirect automatically to the previous page after 2 seconds
+            header("Refresh: 2; url = ./". $_SESSION['previousPage']);
         }
     }
     // If passwords don't match show error
@@ -72,11 +77,11 @@
         echo
             "<div id='content'>",
                 "<h1>passwords don't match!</h1>",
-                "<a href='./'>Continue</a>",
+                "<a href='./". $_SESSION['previousPage']. "'>Continue</a>",
             "</div>"
         ;
-        // Redirect automatically to index.php after 2 seconds
-        header("Refresh: 2; url = ./");
+        // Redirect automatically to the previous page after 2 seconds
+        header("Refresh: 2; url = ./". $_SESSION['previousPage']);
     }
     // DEBUG:  or die(mysqli_error($dbConn))
 ?>

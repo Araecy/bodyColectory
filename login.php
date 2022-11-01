@@ -55,19 +55,19 @@
         $_SESSION["isAdmin"]  = $isAdmin;
         $_SESSION["id"]       = $id;
 
-        // Redirect automatically to index.php
-        header('Location: ./');
+        // Redirect automatically to the previous page
+        header("Location: ./". $_SESSION['previousPage']);
     }
     else{
         // If given username with given password doesn't exist or passwords don't match show error
         echo
         "<div id='content'>",
             "<h1>Account with that username and password does not exist!</h1>",
-            "<a href='./'>Continue</a>",
+            "<a href='./". $_SESSION['previousPage']. "'>Continue</a>",
         "</div>"
         ;
-        // Redirect automatically to index.php after 2 seconds
-        header("Refresh: 2; url = ./");
+        // Redirect automatically to the previous page after 2 seconds
+        header("Refresh: 2; url = ./". $_SESSION['previousPage']);
     }
     // DEBUG:  or die(mysqli_error($dbConn))
 ?>

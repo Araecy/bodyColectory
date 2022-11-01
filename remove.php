@@ -1,3 +1,8 @@
+<!-- Start a php session (this must be before <!DOCTYPE html>!!!) -->
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -37,12 +42,6 @@
     // Delete image from server
     unlink("uploadedImages/$uploaderId/$filename");
 
-    echo
-        "<div id='content'>",
-            "<h1>Item removed!</h1>",
-            "<a href='./'>Continue</a>",
-        "</div>"
-    ;
-    // Redirect automatically to index.php
-    header('Location: ./');
+    // Redirect automatically to the previous page
+    header("Location: ./". $_SESSION['previousPage']);
 ?>

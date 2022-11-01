@@ -22,7 +22,7 @@
 <?php
     // Logout
     session_destroy();
-    // Redirect automatically to index.php
-    header('Location: ./');
+    // Redirect automatically to the previous page
+    header("Location: ./". $_SESSION['previousPage']);
     exit;
 ?>
