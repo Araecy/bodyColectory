@@ -1,16 +1,13 @@
 body {
     padding: 0;
     margin: 0;
-    // z-index: 100;
     div[id="backgroundWrapper"] {
         z-index: -999;
         height: 100vh;
         width: 100vw;
         overflow: hidden;
         position: absolute;
-        // background: rgb(0, 0, 0) url("../img/logo-blue.png") repeat fixed center;
         background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) , url("../img/logo-blue.png") repeat fixed center;
-        // background-size: cover;
         filter: brightness(90%);
     }
 }
@@ -20,6 +17,8 @@ div[id="navWrapper"] {
     min-height: 60px;
     background: rgb(0,134,161);
     background: linear-gradient(90deg, rgba(0,134,161,1) 0%, rgba(0,212,255,1) 100%);
+    position: sticky;
+    top: 0;
     nav {
         padding: 0 0 0 10px;
         list-style-type: none;
@@ -29,9 +28,6 @@ div[id="navWrapper"] {
         align-content: center;
         justify-content: flex-start;
         align-items: center;
-        // :nth-child(4){
-        //     margin-left: auto;
-        // }
         div[id="logoWrapper"] {
             height: inherit;
             min-height: inherit;
@@ -60,7 +56,6 @@ div[id="navWrapper"] {
                 padding: 5px 0;
                 position: relative;
                 background-clip: text;
-                // -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 transition: all 0.3s ease-in-out;
             }
@@ -82,5 +77,28 @@ div[id="navWrapper"] {
                 width: 100%;
             }
         }
+    }
+}
+
+// Text
+#textDiv{
+    width: 50%;
+    margin: 0 auto 0 auto;
+
+    h1{
+        text-align: center;
+        font-family: Georgia, serif !important;
+        font-size: 4.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-shadow: 2px 2px 8px rgb(0 0 0 / 40%);
+    }
+
+    p{
+        text-align: center;
+        line-height: 1.75;
+        font-size: 1.125rem;
+        font-style: italic;
+        text-shadow: 2px 2px 8px rgb(0 0 0 / 40%);
     }
 }
